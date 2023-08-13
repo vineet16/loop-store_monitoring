@@ -48,9 +48,9 @@ def generateReport(input : str, task_progress):
         i = i+1
     
     file_name = "final_report.csv"
-    temp_file_path = os.path.join(temp_dir, file_name)
+    temp_file_path = ""
     with tempfile.TemporaryDirectory() as temp_dir:
-
+        temp_file_path = os.path.join(temp_dir, file_name)
         with open(temp_file_path, "w", newline='') as csv_file:
             csv_writer = csv.writer(csv_file)
             csv_writer.writerow(["store_id", "uptime_last_hour", "uptime_last_day", "update_last_week", "downtime_last_hour", "downtime_last_day", "downtime_last_week"])
